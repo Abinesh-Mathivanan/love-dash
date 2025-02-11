@@ -1,4 +1,3 @@
-# chat_interface.py
 import streamlit as st
 from rag_integration import build_vector_store_with_chroma, rag_generate_answer
 
@@ -7,7 +6,6 @@ uploaded_file = st.sidebar.file_uploader("Upload WhatsApp Chat Export (.txt)", t
 vector_store = None
 
 if uploaded_file:
-    # Build (or rebuild) the vector store from the uploaded chat file.
     vector_store = build_vector_store_with_chroma(uploaded_file)
     st.success("Chat data vectorized and stored!")
 else:
